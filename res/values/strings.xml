@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Android-GPS-Background-Service</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="gpsServiceStartError">Check that android.permission.ACCESS_FINE_LOCATION or android.permission.ACCESS_COARSE_LOCATION are in the manifest and that Google Play Services is enabled.</string>
+
+</resources>
