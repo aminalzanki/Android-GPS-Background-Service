@@ -34,7 +34,7 @@ public class LocationService extends Service implements ConnectionCallbacks,
 	protected LocationClient locationClient = null;
 
 	@Override
-	public IBinder onBind(Intent arg0) {
+	public IBinder onBind(Intent intent) {
 		return null;
 	}
 
