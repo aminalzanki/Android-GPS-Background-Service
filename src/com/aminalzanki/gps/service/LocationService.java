@@ -10,6 +10,7 @@ import android.util.Log;
 import android.widget.Toast;
 
 import com.aminalzanki.gps.R;
+import com.aminalzanki.gps.activity.SpeedoMeterLocation;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.GooglePlayServicesClient.ConnectionCallbacks;
 import com.google.android.gms.common.GooglePlayServicesClient.OnConnectionFailedListener;
@@ -32,6 +33,8 @@ public class LocationService extends Service implements ConnectionCallbacks,
 
 	protected LocationRequest locationRequest = null;
 	protected LocationClient locationClient = null;
+	
+	protected SpeedoMeterLocation mSpeedoMeterLocation;
 
 	@Override
 	public IBinder onBind(Intent intent) {
@@ -123,7 +126,13 @@ public class LocationService extends Service implements ConnectionCallbacks,
 	public void onLocationChanged(Location location) {
 		Log.d(TAG, "Play: onLocationChanged");
 
-		// do something
+		// Track location changes
+		Log.d(TAG, "Latitude: " + location.getLatitude());
+		Log.d(TAG, "Longitude: " + location.getLongitude());
+		
+		if (this.mSpeedoMeterLocation != null) {
+			this.mSpeedoMeterLocation.OnLocationChanged(location);
+		}
 	}
 
 	private boolean hasFineLocationPermission() {
@@ -135,5 +144,5 @@ public class LocationService extends Service implements ConnectionCallbacks,
 		return this
 				.checkCallingOrSelfPermission("android.permission.ACCESS_COARSE_LOCATION") == PackageManager.PERMISSION_GRANTED;
 	}
-
+	
 }

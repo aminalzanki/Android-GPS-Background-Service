@@ -30,12 +30,12 @@ public class LocationLibrary {
 		
 		// init BroadcastReceivr
 		registerReceiver();
-		startSpeedo();
+		startService();
 	}
 	
 	// onDestroy
 	public void onDestroy() {
-
+		this.unregisterReceiver();
 	}
 
 	// startService

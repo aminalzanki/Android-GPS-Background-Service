@@ -1,8 +1,13 @@
 package com.aminalzanki.gps.service;
 
-public class LocationModel {
+import java.io.Serializable;
+
+public class LocationModel implements Serializable {
+
+	private static final long serialVersionUID = 1L;
 
 	protected float mDistanceTraveled;
+
 	protected long mTotalTime;
 
 	public LocationModel(float distanceTraveled, long totalTime) {
