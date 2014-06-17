@@ -190,13 +190,13 @@ containing a value of this type.
         public static final int btn_end=0x7f050009;
         public static final int btn_start=0x7f050008;
         public static final int distance_details=0x7f050005;
-        public static final int distance_value=0x7f050006;
+        public static final int distance_text=0x7f050006;
+        public static final int distance_value=0x7f050007;
         public static final int hybrid=0x7f050004;
         public static final int none=0x7f050000;
         public static final int normal=0x7f050001;
         public static final int satellite=0x7f050002;
         public static final int terrain=0x7f050003;
-        public static final int time_value=0x7f050007;
     }
     public static final class layout {
         public static final int activity_speedometer=0x7f030000;
@@ -296,6 +296,8 @@ containing a value of this type.
         public static final int common_signin_button_text_long=0x7f060012;
         public static final int gpsServiceStartError=0x7f06001c;
         public static final int hello_world=0x7f06001a;
+        public static final int service_not_running=0x7f06001e;
+        public static final int service_running=0x7f06001d;
     }
     public static final class style {
         /** 

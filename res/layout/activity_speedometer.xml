@@ -6,38 +6,29 @@
 
     <RelativeLayout
         android:id="@+id/distance_details"
-        android:layout_width="fill_parent"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="5dp"
-        android:background="@android:color/background_dark" >
+        android:gravity="center"
+        android:paddingTop="100dp" >
+
+        <TextView
+            android:id="@+id/distance_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Distance"
+            android:textSize="20sp" />
 
         <TextView
             android:id="@+id/distance_value"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            android:padding="6sp"
-            android:text="0.00"
-            android:textColor="@android:color/white"
-            android:textSize="60sp" />
-    </RelativeLayout>
+            android:layout_below="@id/distance_text"
+            android:gravity="center"
+            android:text="0.00000000"
+            android:textSize="40sp" />
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/distance_details"
-        android:layout_margin="5dp"
-        android:background="@android:color/background_dark"
-        android:gravity="center" >
-
-        <TextView
-            android:id="@+id/time_value"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:padding="10dp"
-            android:text="00:00:00"
-            android:textColor="@android:color/white"
-            android:textSize="20sp" />
     </RelativeLayout>
 
     <LinearLayout
@@ -45,7 +36,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_gravity="center|bottom"
-        android:orientation="vertical"
+        android:orientation="horizontal"
         android:padding="10dp" >
 
         <Button
@@ -53,12 +44,10 @@
             style="?android:attr/buttonStyleSmall"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="10dp"
+            android:layout_marginRight="4dp"
+            android:layout_weight="1"
             android:background="@android:color/holo_blue_light"
             android:onClick="startService"
-            android:paddingBottom="4dp"
-            android:paddingLeft="4dp"
-            android:paddingRight="4dp"
             android:text="START"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:textColor="@android:color/white"
@@ -69,11 +58,10 @@
             style="?android:attr/buttonStyleSmall"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="4dp"
+            android:layout_weight="1"
             android:background="@android:color/holo_red_light"
             android:onClick="stopService"
-            android:paddingBottom="4dp"
-            android:paddingLeft="4dp"
-            android:paddingRight="4dp"
             android:text="END"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:textColor="@android:color/white"

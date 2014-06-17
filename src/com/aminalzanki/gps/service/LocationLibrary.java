@@ -22,17 +22,17 @@ public class LocationLibrary {
 	protected ILocationCallback mListener;
 
 	// constructor
-	public LocationLibrary (Context context, ILocationCallback listener) {
+	public LocationLibrary(Context context, ILocationCallback listener) {
 		super();
 		this.mContext = context;
 		this.mListener = listener;
 		this.mReceiver = new GpsOutReceiver();
-		
+
 		// init BroadcastReceivr
 		registerReceiver();
 		startService();
 	}
-	
+
 	// onDestroy
 	public void onDestroy() {
 		this.unregisterReceiver();
@@ -107,7 +107,7 @@ public class LocationLibrary {
 
 	// registerReceiver
 	private void registerReceiver() {
-		if(this.mReceiver != null) {
+		if (this.mReceiver != null) {
 			IntentFilter filter = new IntentFilter(BroadcastAction.ACTION_OUT);
 			this.mContext.registerReceiver(this.mReceiver, filter);
 		}

@@ -8,16 +8,12 @@ public class LocationModel implements Serializable {
 
 	protected float mDistanceTraveled;
 
-	protected long mTotalTime;
-
-	public LocationModel(float distanceTraveled, long totalTime) {
+	public LocationModel(float distanceTraveled) {
 		this.mDistanceTraveled = distanceTraveled;
-		this.mTotalTime = totalTime;
 	}
 
-	public void updateModel(float distanceTraveled, long totalTime) {
+	public void updateModel(float distanceTraveled) {
 		this.mDistanceTraveled = distanceTraveled;
-		this.mTotalTime = totalTime;
 	}
 
 	public float getmDistanceTraveled() {
@@ -26,14 +22,6 @@ public class LocationModel implements Serializable {
 
 	public void setmDistanceTraveled(float mDistanceTraveled) {
 		this.mDistanceTraveled = mDistanceTraveled;
-	}
-
-	public long getmTotalTime() {
-		return mTotalTime;
-	}
-
-	public void setmTotalTime(long mTotalTime) {
-		this.mTotalTime = mTotalTime;
 	}
 
 }

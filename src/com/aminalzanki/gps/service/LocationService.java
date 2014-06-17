@@ -10,7 +10,7 @@ import android.util.Log;
 import android.widget.Toast;
 
 import com.aminalzanki.gps.R;
-import com.aminalzanki.gps.activity.SpeedoMeterLocation;
+import com.aminalzanki.gps.utils.SpeedoMeterLocation;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.GooglePlayServicesClient.ConnectionCallbacks;
 import com.google.android.gms.common.GooglePlayServicesClient.OnConnectionFailedListener;
@@ -44,6 +44,8 @@ public class LocationService extends Service implements ConnectionCallbacks,
 	@Override
 	public void onCreate() {
 		Log.d(TAG, "onCreate");
+		
+		this.mSpeedoMeterLocation = new SpeedoMeterLocation(this);
 
 		this.locationRequest = new LocationRequest();
 		if (hasFineLocationPermission())
@@ -91,6 +93,10 @@ public class LocationService extends Service implements ConnectionCallbacks,
 	@Override
 	public void onDestroy() {
 		Log.d(TAG, "onDestroy");
+		
+		if (this.mSpeedoMeterLocation != null) {
+			this.mSpeedoMeterLocation.stop();
+		}
 
 		if (this.locationClient.isConnected()) {
 			this.locationClient.removeLocationUpdates(this);
@@ -125,10 +131,6 @@ public class LocationService extends Service implements ConnectionCallbacks,
 	@Override
 	public void onLocationChanged(Location location) {
 		Log.d(TAG, "Play: onLocationChanged");
-
-		// Track location changes
-		Log.d(TAG, "Latitude: " + location.getLatitude());
-		Log.d(TAG, "Longitude: " + location.getLongitude());
 		
 		if (this.mSpeedoMeterLocation != null) {
 			this.mSpeedoMeterLocation.OnLocationChanged(location);
